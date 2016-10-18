@@ -1,11 +1,11 @@
 class CreateEntries < ActiveRecord::Migration[5.0]
   def change
     create_table :entries do |t|
-      t.string :Word :limit => 64, :null => false
+      t.string :Word 
       t.string :Translate
       t.text :Explanation
 
-      #t.timestamps
+      t.timestamps
     end
   end
 end
