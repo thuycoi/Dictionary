@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @gword.word %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gword.date %>
+</p>
+
+<%= link_to 'Edit', edit_gword_path(@gword) %> |
+<%= link_to 'Back', gwords_path %>

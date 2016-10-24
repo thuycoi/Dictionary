@@ -1,0 +1,1 @@
+json.array! @vwords, partial: 'vwords/vword', as: :vword

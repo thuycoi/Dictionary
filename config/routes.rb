@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :vwords
+  resources :gwords
   resources :entries
 
   root 'entries#index'

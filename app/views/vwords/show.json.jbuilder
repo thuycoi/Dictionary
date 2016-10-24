@@ -1,0 +1,1 @@
+json.partial! "vwords/vword", vword: @vword

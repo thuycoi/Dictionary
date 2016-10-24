@@ -1,0 +1,1 @@
+json.array! @gwords, partial: 'gwords/gword', as: :gword

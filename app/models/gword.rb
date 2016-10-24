@@ -1,0 +1,2 @@
+class Gword < ApplicationRecord
+end

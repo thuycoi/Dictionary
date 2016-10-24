@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vwords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wort</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vwords.each do |vword| %>
+      <tr>
+        <td><%= vword.wort %></td>
+        <td><%= link_to 'Show', vword %></td>
+        <td><%= link_to 'Edit', edit_vword_path(vword) %></td>
+        <td><%= link_to 'Destroy', vword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vword', new_vword_path %>

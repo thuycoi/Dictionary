@@ -1,0 +1,22 @@
+<%= form_for(vword) do |f| %>
+  <% if vword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vword.errors.count, "error") %> prohibited this vword from being saved:</h2>
+
+      <ul>
+      <% vword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :wort %>
+    <%= f.text_field :wort %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

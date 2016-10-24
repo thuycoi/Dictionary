@@ -1,0 +1,1 @@
+json.partial! "gwords/gword", gword: @gword

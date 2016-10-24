@@ -10,14 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017204747) do
+ActiveRecord::Schema.define(version: 20161024205453) do
 
-  create_table "entries", force: :cascade do |t|
+  create_table "GWords", force: :cascade do |t|
     t.string   "Word"
     t.string   "Translate"
     t.text     "Explanation"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "fav"
+  end
+
+  create_table "g_words", force: :cascade do |t|
+    t.string   "entry"
+    t.boolean  "favourite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "translations", force: :cascade do |t|
+    t.integer  "Gword_id"
+    t.integer  "VWord_id"
+    t.boolean  "favourite"
+    t.string   "example"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["Gword_id"], name: "index_translations_on_Gword_id"
+    t.index ["VWord_id"], name: "index_translations_on_VWord_id"
+  end
+
+  create_table "v_words", force: :cascade do |t|
+    t.string   "entry"
+    t.boolean  "favourite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

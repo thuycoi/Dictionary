@@ -1,0 +1,27 @@
+<%= form_for(gword) do |f| %>
+  <% if gword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gword.errors.count, "error") %> prohibited this gword from being saved:</h2>
+
+      <ul>
+      <% gword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :word %>
+    <%= f.text_field :word %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
