@@ -5,8 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Word</th>
-      <th>Date</th>
+      <th>Deutsch</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +13,7 @@
   <tbody>
     <% @gwords.each do |gword| %>
       <tr>
-        <td><%= gword.word %></td>
-        <td><%= gword.date %></td>
+        <td><%= gword.entry %></td>
         <td><%= link_to 'Show', gword %></td>
         <td><%= link_to 'Edit', edit_gword_path(gword) %></td>
         <td><%= link_to 'Destroy', gword, method: :delete, data: { confirm: 'Are you sure?' } %></td>

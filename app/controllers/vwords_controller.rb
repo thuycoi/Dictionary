@@ -69,6 +69,6 @@ class VwordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vword_params
-      params.require(:vword).permit(:wort)
+      params.require(:vword).permit(:entry)
     end
 end

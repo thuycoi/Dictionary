@@ -69,6 +69,6 @@ class GwordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gword_params
-      params.require(:gword).permit(:word, :date)
+      params.require(:gword).permit(:entry)
     end
 end

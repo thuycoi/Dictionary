@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  word: MyString
-  date: 2016-10-25
+  entry: MyString
 
 two:
-  word: MyString
-  date: 2016-10-25
+  entry: MyString

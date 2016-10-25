@@ -1,0 +1,37 @@
+<%= form_for(translation) do |f| %>
+  <% if translation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(translation.errors.count, "error") %> prohibited this translation from being saved:</h2>
+
+      <ul>
+      <% translation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :explain %>
+    <%= f.text_area :explain %>
+  </div>
+
+  <div class="field">
+    <%= f.label :like %>
+    <%= f.check_box :like %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gword_id %>
+    <%= f.text_field :gword_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vword_id %>
+    <%= f.text_field :vword_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

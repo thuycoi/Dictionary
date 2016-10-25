@@ -17,7 +17,7 @@ class GwordsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create gword" do
     assert_difference('Gword.count') do
-      post gwords_url, params: { gword: { date: @gword.date, word: @gword.word } }
+      post gwords_url, params: { gword: { entry: @gword.entry } }
     end
 
     assert_redirected_to gword_url(Gword.last)
@@ -34,7 +34,7 @@ class GwordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update gword" do
-    patch gword_url(@gword), params: { gword: { date: @gword.date, word: @gword.word } }
+    patch gword_url(@gword), params: { gword: { entry: @gword.entry } }
     assert_redirected_to gword_url(@gword)
   end
 

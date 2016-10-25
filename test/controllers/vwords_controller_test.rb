@@ -17,7 +17,7 @@ class VwordsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create vword" do
     assert_difference('Vword.count') do
-      post vwords_url, params: { vword: { wort: @vword.wort } }
+      post vwords_url, params: { vword: { entry: @vword.entry } }
     end
 
     assert_redirected_to vword_url(Vword.last)
@@ -34,7 +34,7 @@ class VwordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update vword" do
-    patch vword_url(@vword), params: { vword: { wort: @vword.wort } }
+    patch vword_url(@vword), params: { vword: { entry: @vword.entry } }
     assert_redirected_to vword_url(@vword)
   end
 

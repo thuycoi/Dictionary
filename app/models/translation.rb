@@ -1,4 +1,4 @@
 class Translation < ApplicationRecord
-  belongs_to :gwords
-  belongs_to :vwords
+  belongs_to :gword
+  belongs_to :vword
 end
