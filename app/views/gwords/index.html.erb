@@ -13,16 +13,27 @@
   <tbody>
     <% @gwords.each do |gword| %>
       <tr>
-        <td><%= gword.entry %></td>
+        <td><%= link_to gword.entry, edit_gword_path(gword) %></td>
         <!-- <td><%= link_to 'Anzeigen', gword %></td> -->
-        <td><%= link_to 'Bearbeiten', edit_gword_path(gword) %></td>
+        <!-- <td><%= link_to 'Bearbeiten', edit_gword_path(gword) %></td> -->
         <!-- <td><%= link_to 'Löschen', gword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
+<br>
 <%= link_to 'Neues Wort anlegen', new_gword_path %>
-<%= link_to 'Wörterbuch', translations_path %>
+
+</p>
+<table>
+  <tr>
+    <th>Navigation</th>
+    <td> <%= link_to 'Wörterbuch', translations_path %> </td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><%= link_to 'Vietnamesische Wörter', vwords_path %> </td>
+  </tr>
+</table>

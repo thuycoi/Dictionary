@@ -13,9 +13,9 @@
   <tbody>
     <% @vwords.each do |vword| %>
       <tr>
-        <td><%= vword.entry %></td>
+        <td><%= link_to vword.entry, edit_vword_path(vword) %></td>
         <!-- <td><%= link_to 'Anzeigen', vword %></td> -->
-        <td><%= link_to 'Bearbeiten', edit_vword_path(vword) %></td>
+        <!-- <td><%= link_to 'Bearbeiten', edit_vword_path(vword) %></td> -->
         <!-- <td><%= link_to 'Löschen', vword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
@@ -23,6 +23,16 @@
 </table>
 
 <br>
-
 <%= link_to 'Neues Wort anlegen', new_vword_path %>
-<%= link_to 'Wörterbuch', translations_path %>
+
+</p>
+<table>
+  <tr>
+    <th>Navigation</th>
+    <td> <%= link_to 'Wörterbuch', translations_path %> </td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><%= link_to 'Deutsche Wörter', gwords_path %> </td>
+  </tr>
+</table>
