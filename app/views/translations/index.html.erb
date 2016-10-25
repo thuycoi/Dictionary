@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Translations</h1>
+<h1>Wörterbuch: Deutsch-Vietnamesisch</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Explain</th>
+      <th>Deutsch</th>
+      <th>Vietnamesisch</th>
+      <th>Beispielsatz</th>
       <th>Like</th>
-      <th>Gword</th>
-      <th>Vword</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,13 +16,13 @@
   <tbody>
     <% @translations.each do |translation| %>
       <tr>
+        <td><%= translation.gword.entry %></td>
+        <td><%= translation.vword.entry %></td>
         <td><%= translation.explain %></td>
         <td><%= translation.like %></td>
-        <td><%= translation.gword %></td>
-        <td><%= translation.vword %></td>
-        <td><%= link_to 'Show', translation %></td>
-        <td><%= link_to 'Edit', edit_translation_path(translation) %></td>
-        <td><%= link_to 'Destroy', translation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Anzeigen', translation %></td> -->
+        <td><%= link_to 'Bearbeiten', edit_translation_path(translation) %></td>
+        <!-- <td><%= link_to 'Löschen', translation, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Translation', new_translation_path %>
+<%= link_to 'Neue Übersetzung', new_translation_path %>
+<%= link_to 'Deutsche Wörter', gwords_path %>
+<%= link_to 'Vietnamesische Wörter', vwords_path %>

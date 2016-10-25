@@ -1,6 +1,8 @@
-<h1>Editing Vword</h1>
+<h1>Wort bearbeiten</h1>
 
 <%= render 'form', vword: @vword %>
 
-<%= link_to 'Show', @vword %> |
-<%= link_to 'Back', vwords_path %>
+<%= link_to 'Anzeigen', @vword %> |
+<%= link_to 'Zurück', vwords_path %> |
+<!-- <%= link_to 'Löschen', vwords_path %> -->
+<%= link_to 'Löschen', @vword, method: :delete, data: { confirm: 'Are you sure?' } %>

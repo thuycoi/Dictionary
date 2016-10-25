@@ -28,7 +28,7 @@ class GwordsController < ApplicationController
 
     respond_to do |format|
       if @gword.save
-        format.html { redirect_to @gword, notice: 'Gword was successfully created.' }
+        format.html { redirect_to @gword, notice: 'Der Eintrag wurde erfolgreich angelegt.' }
         format.json { render :show, status: :created, location: @gword }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GwordsController < ApplicationController
   def update
     respond_to do |format|
       if @gword.update(gword_params)
-        format.html { redirect_to @gword, notice: 'Gword was successfully updated.' }
+        format.html { redirect_to @gword, notice: 'Der Eintrag wurde erfolgreich bearbeitet.' }
         format.json { render :show, status: :ok, location: @gword }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class GwordsController < ApplicationController
   def destroy
     @gword.destroy
     respond_to do |format|
-      format.html { redirect_to gwords_url, notice: 'Gword was successfully destroyed.' }
+      format.html { redirect_to gwords_url, notice: 'Der Eintrag wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vwords</h1>
+<h1>Vietnamesische Wörter</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Entry</th>
+      <th>Wort</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @vwords.each do |vword| %>
       <tr>
         <td><%= vword.entry %></td>
-        <td><%= link_to 'Show', vword %></td>
-        <td><%= link_to 'Edit', edit_vword_path(vword) %></td>
-        <td><%= link_to 'Destroy', vword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Anzeigen', vword %></td> -->
+        <td><%= link_to 'Bearbeiten', edit_vword_path(vword) %></td>
+        <!-- <td><%= link_to 'Löschen', vword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Vword', new_vword_path %>
+<%= link_to 'Neues Wort anlegen', new_vword_path %>
+<%= link_to 'Wörterbuch', translations_path %>

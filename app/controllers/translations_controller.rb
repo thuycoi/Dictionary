@@ -28,7 +28,7 @@ class TranslationsController < ApplicationController
 
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to @translation, notice: 'Translation was successfully created.' }
+        format.html { redirect_to @translation, notice: 'Der Eintrag wurde erfolgreich angelegt.' }
         format.json { render :show, status: :created, location: @translation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class TranslationsController < ApplicationController
   def update
     respond_to do |format|
       if @translation.update(translation_params)
-        format.html { redirect_to @translation, notice: 'Translation was successfully updated.' }
+        format.html { redirect_to @translation, notice: 'Der Eintrag wurde erfolgreich bearbeitet.' }
         format.json { render :show, status: :ok, location: @translation }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TranslationsController < ApplicationController
   def destroy
     @translation.destroy
     respond_to do |format|
-      format.html { redirect_to translations_url, notice: 'Translation was successfully destroyed.' }
+      format.html { redirect_to translations_url, notice: 'Der Eintrag wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

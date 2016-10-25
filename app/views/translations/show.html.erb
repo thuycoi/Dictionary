@@ -1,7 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Explain:</strong>
+  <strong>Deutsch</strong>
+  <%= @translation.gword.entry %>
+</p>
+
+<p>
+  <strong>Vietnamesisch</strong>
+  <%= @translation.vword.entry %>
+</p>
+
+<p>
+  <strong>Beispielsatz:</strong>
   <%= @translation.explain %>
 </p>
 
@@ -9,16 +19,5 @@
   <strong>Like:</strong>
   <%= @translation.like %>
 </p>
-
-<p>
-  <strong>Gword:</strong>
-  <%= @translation.gword %>
-</p>
-
-<p>
-  <strong>Vword:</strong>
-  <%= @translation.vword %>
-</p>
-
-<%= link_to 'Edit', edit_translation_path(@translation) %> |
-<%= link_to 'Back', translations_path %>
+<%= link_to 'Bearbeiten', edit_translation_path(@translation) %> |
+<%= link_to 'Zurück', translations_path %>

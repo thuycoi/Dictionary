@@ -28,7 +28,7 @@ class VwordsController < ApplicationController
 
     respond_to do |format|
       if @vword.save
-        format.html { redirect_to @vword, notice: 'Vword was successfully created.' }
+        format.html { redirect_to @vword, notice: 'Das Wort wurde erfolgreich angelegt.' }
         format.json { render :show, status: :created, location: @vword }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class VwordsController < ApplicationController
   def update
     respond_to do |format|
       if @vword.update(vword_params)
-        format.html { redirect_to @vword, notice: 'Vword was successfully updated.' }
+        format.html { redirect_to @vword, notice: 'Das Wort wurde erfolgreich bearbeitet.' }
         format.json { render :show, status: :ok, location: @vword }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class VwordsController < ApplicationController
   def destroy
     @vword.destroy
     respond_to do |format|
-      format.html { redirect_to vwords_url, notice: 'Vword was successfully destroyed.' }
+      format.html { redirect_to vwords_url, notice: 'Der Eintrag wurde erfolgreich gelöscht.' }
       format.json { head :no_content }
     end
   end

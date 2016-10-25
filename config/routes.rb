@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ root 'translations#index'
+
   resources :translations
   resources :vwords
   resources :gwords
