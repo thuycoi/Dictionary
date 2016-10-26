@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Gword.create!(entry: 'Haus')
+
+# Translation.create!(gword: 'Salz', vword: 'muoi', explain: 'Salz und Pfeffer', like: true)

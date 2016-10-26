@@ -4,7 +4,8 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.all
+    @translations = Translation.where(["gword_id LIKE ?","%#{params[:search]}%"])
+    # @gword = Gword.where(["entry LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /translations/1

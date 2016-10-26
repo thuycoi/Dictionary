@@ -2,6 +2,11 @@
 
 <h1>Deutsche Wörter</h1>
 
+<!-- <%= form_tag gwords_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Suche" %>
+<% end %> -->
+
 <table>
   <thead>
     <tr>
@@ -14,6 +19,7 @@
     <% @gwords.each do |gword| %>
       <tr>
         <td><%= link_to gword.entry, edit_gword_path(gword) %></td>
+
         <!-- <td><%= link_to 'Anzeigen', gword %></td> -->
         <!-- <td><%= link_to 'Bearbeiten', edit_gword_path(gword) %></td> -->
         <!-- <td><%= link_to 'Löschen', gword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->

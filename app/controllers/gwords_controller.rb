@@ -4,7 +4,7 @@ class GwordsController < ApplicationController
   # GET /gwords
   # GET /gwords.json
   def index
-    @gwords = Gword.all
+    @gwords = Gword.where(["entry LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /gwords/1
@@ -14,6 +14,11 @@ class GwordsController < ApplicationController
 
   # GET /gwords/new
   def new
+    @gword = Gword.new
+  end
+
+  # GET /gwords/new2
+  def new2
     @gword = Gword.new
   end
 
