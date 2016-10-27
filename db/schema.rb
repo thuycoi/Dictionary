@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025142649) do
+ActiveRecord::Schema.define(version: 20161027193718) do
 
   create_table "gwords", force: :cascade do |t|
     t.string   "entry"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20161025142649) do
     t.datetime "updated_at", null: false
     t.index ["gword_id"], name: "index_translations_on_gword_id"
     t.index ["vword_id"], name: "index_translations_on_vword_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",       limit: 30
+    t.string   "email"
+    t.string   "password"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "vwords", force: :cascade do |t|
