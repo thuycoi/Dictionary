@@ -5,5 +5,34 @@
   <%= @gword.entry %>
 </p>
 
+<h3>Kommentare</h3>
+<%= @comments.each do |comment| %>
+<div>
+  <strong><%= comment.commenter %></strong>
+  <br/>
+  <p><%= comment.body %></p>
+</div>
+<%end%>
+
+<h2>Kommentare hinzufügen</h2>
+<%= form_for @comment do |f| %>
+<p>
+  <%= f.label :commenter %></br>
+  <%= f.text_field :commenter %>
+</p>
+<p>
+<%= f.label :body %></br>
+<%= f.text_field :body %>
+</p>
+<p>
+  <%= f.label :gword_id %></br>
+  <%= f.text_field :gword_id %>
+</p>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_gword_path(@gword) %> |
 <%= link_to 'Back', gwords_path %>

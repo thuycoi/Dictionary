@@ -3,9 +3,9 @@
 one:
   commenter: MyString
   body: MyText
-  gword: 
+  gword_id: one
 
 two:
   commenter: MyString
   body: MyText
-  gword: 
+  gword_id: two
