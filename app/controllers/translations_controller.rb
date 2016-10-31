@@ -4,8 +4,11 @@ class TranslationsController < ApplicationController
   # GET /translations
   # GET /translations.json
   def index
-    @translations = Translation.where(["gword_id LIKE ?","%#{params[:search]}%"])
-    # @gword = Gword.where(["entry LIKE ?","%#{params[:search]}%"])
+    # @translations = Translation.all
+
+    # @gwords = Gword.where(["entry LIKE ?","%#{params[:search]}%"])
+    @gwords = Gword.joins("Left JOIN Translations ON Translations.gword_id= gwords.id").where(["gwords.entry = ?", "%#{params[:search]}%"])
+    # @translations = Translation.joins("Left JOIN 'gwords' ON gwords.id = translations.gword_id").where(["gword.entry = ?", "%#{params[:search]}%"])
   end
 
   # GET /translations/1

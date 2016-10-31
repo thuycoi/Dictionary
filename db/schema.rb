@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027193718) do
+ActiveRecord::Schema.define(version: 20161031125813) do
+
+  create_table "g_comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "gword_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gword_id"], name: "index_g_comments_on_gword_id"
+    t.index ["user_id"], name: "index_g_comments_on_user_id"
+  end
 
   create_table "gwords", force: :cascade do |t|
     t.string   "entry"
@@ -35,6 +45,16 @@ ActiveRecord::Schema.define(version: 20161027193718) do
     t.string   "password"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+  end
+
+  create_table "v_comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "vword_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_v_comments_on_user_id"
+    t.index ["vword_id"], name: "index_v_comments_on_vword_id"
   end
 
   create_table "vwords", force: :cascade do |t|

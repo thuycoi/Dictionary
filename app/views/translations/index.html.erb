@@ -19,18 +19,14 @@
   </thead>
 
   <tbody>
-    <% @translations.each do |translation| %>
-      <tr>
-        <td><%= translation.gword.entry %></td>
-        <td><%= translation.vword.entry %></td>
-        <td><%= translation.explain %></td>
-        <td><%= translation.like %></td>
-        <!-- <td><%= link_to 'Anzeigen', translation %></td> -->
-        <td><%= link_to 'Bearbeiten', edit_translation_path(translation) %></td>
-        <!-- <td><%= link_to 'Löschen', translation, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
+    <% @gwords.each do |g| %>
+    <tr>
+      <td> <%= gword.entry %> </td>
+    </tr>
     <% end %>
   </tbody>
+
+
 </table>
 
 <br>
