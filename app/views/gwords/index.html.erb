@@ -17,7 +17,7 @@
 
 
 
-  <tbody>    <% @gwords.each do |gword| %>      <tr>        <td><%= link_to gword.entry, edit_gword_path(gword) %></td>        <td><%= link_to 'Anzeigen', gword %></td>        <!-- <td><%= link_to 'Bearbeiten', edit_gword_path(gword) %></td> -->        <!-- <td><%= link_to 'Löschen', gword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->      </tr>    <% end %>  </tbody>
+  <tbody>    <% @gwords.each do |gword| %>      <tr>        <td><%= link_to gword.entry, edit_gword_path(gword) %></td>        <td><%= link_to 'Definition', gword %></td>        <!-- <td><%= link_to 'Bearbeiten', edit_gword_path(gword) %></td> -->        <!-- <td><%= link_to 'Löschen', gword, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->      </tr>    <% end %>  </tbody>
 
 
 

@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
+gem 'rspec-example_steps'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -48,3 +50,11 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.alpha3'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
+group :test do
+  gem 'capybara'
+end
