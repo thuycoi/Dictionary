@@ -7,33 +7,60 @@
   <%= submit_tag "Suche" %>
 <% end %>
 
+</br>
+<% if @translations %>
 <table>
   <thead>
     <tr>
       <th>Deutsch</th>
       <th>Vietnamesisch</th>
       <th>Beispielsatz</th>
-      <th>Like</th>
+      <!-- <th>Like</th> -->
       <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @translations.each do |translation| %>
+      <tr>
+        <td><%= link_to translation.gword.entry,  edit_translation_gword_path(:translation_id =>@translation_id, :id =>@gword_id) %></td>
+        <td><%= translation.vword.entry %></td>
+        <td><%= translation.explain %></td>
+        <!-- <td><%= translation.like %></td> -->
+        <td><%= link_to 'Anzeigen', translation %></td>
+        <!-- <td><%= link_to 'Bearbeiten', edit_translation_path(translation) %></td> -->
+        <!-- <td><%= link_to 'Löschen', translation, method: :delete, data: { confirm: 'Bist du sicher?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+<%= link_to 'Neue Übersetzung', new_translation_path %>
+<% elsif @gwords.empty? %>
+<h3> Kein Wort mit <i><%= params[:search]%></i> gefunden. </h3>
+<%= link_to 'Zurück zum Wörterbuch', translations_path %>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Deutsch</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @gwords.each do |g| %>
-    <tr>
-      <td> <%= gword.entry %> </td>
-    </tr>
-    <% end %>
+      <%= @gwords.each do |g| %>
+  <tr>
+    <td> <%= g.entry %> </td>
+  </tr>
+  <% end %>
   </tbody>
-
-
 </table>
+</br>
+<%= link_to 'Zurück zum Wörterbuch', translations_path %>
 
-<br>
-
-<%= link_to 'Neue Übersetzung', new_translation_path %>
+<% end %>
 
 </p>
+______________________________
 <table>
   <tr>
     <th>Navigation</th>

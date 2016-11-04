@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :Deutsch %>
+    <%= f.text_field :gword_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Vietnamesisch %>
+    <%= f.text_field :vword_id %>
+  </div>
+
+  <div class="field">
     <%= f.label :Beispielsatz %>
     <%= f.text_area :explain %>
   </div>
@@ -21,15 +31,7 @@
     <%= f.check_box :like %>
   </div>
 
-  <div class="field">
-    <%= f.label :Deutsch %>
-    <%= f.text_field :gword_id %>
-  </div>
 
-  <div class="field">
-    <%= f.label :Vietnamesisch %>
-    <%= f.text_field :vword_id %>
-  </div>
 
   <div class="actions">
     <%= f.submit :Fertig %>
