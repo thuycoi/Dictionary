@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101150517) do
+ActiveRecord::Schema.define(version: 20161108150237) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
@@ -19,16 +19,6 @@ ActiveRecord::Schema.define(version: 20161101150517) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["gword_id"], name: "index_comments_on_gword_id"
-  end
-
-  create_table "g_comments", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "gword_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["gword_id"], name: "index_g_comments_on_gword_id"
-    t.index ["user_id"], name: "index_g_comments_on_user_id"
   end
 
   create_table "gwords", force: :cascade do |t|
@@ -49,21 +39,10 @@ ActiveRecord::Schema.define(version: 20161101150517) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 30
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
-  create_table "v_comments", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "vword_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_v_comments_on_user_id"
-    t.index ["vword_id"], name: "index_v_comments_on_vword_id"
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "vwords", force: :cascade do |t|

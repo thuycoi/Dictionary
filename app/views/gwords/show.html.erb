@@ -18,26 +18,27 @@
 <h2>Kommentare hinzufügen</h2>
 <%= form_for @comment do |f| %>
 <p>
-  <%= f.label :commenter %></br>
+  <%= f.label :Name %></br>
   <%= f.text_field :commenter %>
 </p>
 
 <p>
-<%= f.label :body %></br>
+<%= f.label :Kommentar %></br>
 <%= f.text_field :body %>
 </p>
 
-<p>
+<%= f.hidden_field :gword_id %>
+
+<!-- <p>
   <%= f.label :gword_id %></br>
-  <%=
-  # f.text_field :gword_id %>
-</p>
+  <%= f.text_field :gword_id %>
+</p> -->
 
 <p>
-  <%= f.submit %>
+  <%= f.submit :Kommentieren%>
 </p>
 <% end %>
 
 
-<%= link_to 'Edit', edit_gword_path(@gword) %> |
-<%= link_to 'Back', gwords_path %>
+<!-- <%= link_to 'Bearbeiten', edit_gword_path(@gword) %> | -->
+<%= link_to 'Zurück', gwords_path %>

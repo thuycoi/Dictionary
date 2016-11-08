@@ -7,6 +7,7 @@ class TranslationsController < ApplicationController
     if params[:search].blank?
       # @gwords = Gword.where(["entry LIKE ?","%#{params[:search]}%"])
       @translations = Translation.all
+      @gwords = Gword.all
       # @translations = Translation.joins("Left JOIN 'gwords' ON gwords.id = translations.gword_id").where(["gword.entry = ?", "%#{params[:search]}%"])
     else
       # @gwords = Gword.all
@@ -19,6 +20,7 @@ class TranslationsController < ApplicationController
   # GET /translations/1
   # GET /translations/1.json
   def show
+    @gwords = Gwords.all
   end
 
   # GET /translations/new

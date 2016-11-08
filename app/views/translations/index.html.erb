@@ -22,7 +22,7 @@
   <tbody>
     <% @translations.each do |translation| %>
       <tr>
-        <td><%= link_to translation.gword.entry,  edit_translation_gword_path(:translation_id =>@translation_id, :id =>@gword_id) %></td>
+        <td><%= link_to translation.gword.entry,   translation_gword_path(translation, translation.gword.id) %></td>
         <td><%= translation.vword.entry %></td>
         <td><%= translation.explain %></td>
         <!-- <td><%= translation.like %></td> -->

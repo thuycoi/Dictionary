@@ -4,7 +4,7 @@ feature "Comment a Gword entry" do
   scenario 'can create a comment' do
 
     When "I go to a GWordEntry's Definition 'Schule'" do
-      page.visit '/gwords/1'
+      page.visit 'gwords/1'
     end
 
     And "I fill in my name" do

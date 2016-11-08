@@ -12,19 +12,12 @@
   <% end %>
 
 
-<form role="form">
-  <div class="form-group">
+  <div class="field">
     <%= f.label :Wort %>
     <%= f.text_field :entry %>
   </div>
 
-  <!-- <div class="actions">
-    <%= f.submit :Fertig %>
-  </div> -->
-  <input type="submit" value="Login" />
-  <input type="button" value="Cancel" />
-</form>
-
-
-
+  <div class="actions">
+    <%= f.submit :Fertig%>
+  </div>
 <% end %>
