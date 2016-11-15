@@ -1,5 +1,6 @@
 class TranslationsController < ApplicationController
   before_action :set_translation, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:show, :edit, :create]
 
   # GET /translations
   # GET /translations.json
@@ -12,7 +13,7 @@ class TranslationsController < ApplicationController
     else
       # @gwords = Gword.all
       # @gwords = @gwords.search(params[:search]
-      @gwords = Gword.joins("LEFT JOIN Translations ON Translations.gword_id= gwords.id").where(["gwords.entry = ?", "#{params[:search]}"])
+      @gwords = Gword.joins("LEFT JOIN Translations ON Translations.gword_id= gwords.id").where(["gwords.entry LIKE ?", "%#{params[:search]}%"])
     end
   end
 
@@ -72,6 +73,10 @@ class TranslationsController < ApplicationController
     end
   end
 
+  def authorize
+    redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_translation
@@ -82,4 +87,8 @@ class TranslationsController < ApplicationController
     def translation_params
       params.require(:translation).permit(:explain, :like, :gword_id, :vword_id)
     end
-end
+
+
+
+
+  end

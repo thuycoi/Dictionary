@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+get 'signup' => 'users#new', :as =>'signup'
+get 'login' => 'sessions#new', :as =>'login'
+get 'logout' => 'sessions#delete', :as => 'logout'
+
+  resources :sessions
   resources :users
   resources :comments
+
+  
   root 'translations#index'
 
   resources :translations do

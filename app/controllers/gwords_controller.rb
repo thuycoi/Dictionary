@@ -1,6 +1,7 @@
 class GwordsController < ApplicationController
   before_action :set_gword, only: [:show, :edit, :update, :destroy]
 
+
   # GET /gwords
   # GET /gwords.json
   def index

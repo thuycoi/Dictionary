@@ -60,7 +60,16 @@
 <% end %>
 
 </p>
-______________________________
+______________________________ </p>
+<% if current_user %>
+  Angemeldet als <b><%= current_user.name %></b>.
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to 'Benutzeraccount anlegen', signup_path %> oder
+  <%= link_to 'Anmelden', login_path %> </td>
+<% end %>
+<p>
+</p>
 <table>
   <tr>
     <th>Navigation</th>
@@ -69,9 +78,5 @@ ______________________________
   <tr>
     <th></th>
     <td><%= link_to 'Vietnamesische Wörter', vwords_path %> </td>
-  </tr>
-  <tr>
-    <th></th>
-    <td><%= link_to 'Benutzeraccount anlegen', users_path %> </td>
   </tr>
 </table>
