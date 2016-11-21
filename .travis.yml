@@ -6,4 +6,8 @@ rvm:
 - jruby-19mode
 - rbx-2
 script:
+- RAILS_ENV=test bundle exec rake
 - bundle exec rspec spec/
+branches:
+    only:
+        - master
