@@ -60,7 +60,6 @@ group :test do
   gem 'capybara'
 end
 
-gem 'launchy'
 gem 'rails-controller-testing'
 
 # gem 'devise', '~> 3.5','>=3.5.2'
