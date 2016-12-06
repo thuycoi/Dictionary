@@ -25,6 +25,12 @@ require 'capybara/rails'
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
+
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
+
+load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
+# ActiveRecord::Migrator.up('db/migrate') # use migrations
+
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
