@@ -21,7 +21,7 @@ class TranslationsController < ApplicationController
   # GET /translations/1
   # GET /translations/1.json
   def show
-    @gwords = Gwords.all
+    @translations = Translations.all
   end
 
   # GET /translations/new
