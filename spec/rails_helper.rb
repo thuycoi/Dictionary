@@ -26,8 +26,16 @@ require 'capybara/rails'
 # load schema
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-#load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
- ActiveRecord::Migrator.up('db/migrate') # use migrations
+load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
+ #ActiveRecord::Migrator.up('db/migrate') # use migrations
+
+ # see
+ # atom `bundle show activerecord`/lib/active_record/migration.rb:572
+
+ # needs_migration returns true on travis, not if same command is issued locally.
+ #def needs_migration?(connection = Base.connection)
+ #  (migrations(migrations_paths).collect(&:version) - get_all_versions(connection)).size > 0
+ #end
 
 puts "needs_migration: #{ActiveRecord::Migrator.needs_migration?}"
 puts "any_migrations: #{ActiveRecord::Migrator.any_migrations?}"
@@ -39,20 +47,8 @@ migrations = ActiveRecord::Migrator.migrations(ActiveRecord::Migrator.migrations
 puts "migrations: #{migrations}"
 puts "migrations - versions #{migrations - versions}"
 
-# see
-# atom `bundle show activerecord`/lib/active_record/migration.rb:572
 
-#def needs_migration?(connection = Base.connection)
-#  (migrations(migrations_paths).collect(&:version) - get_all_versions(connection)).size > 0
-#end
 
-# there is one empty migration
-
-# class DropComments < ActiveRecord::Migration[5.0]
-#   def change
-#   end
-# end
-# git rm db/migrate/20161031115214_drop_comments.rb
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
