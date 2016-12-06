@@ -23,13 +23,18 @@ require 'capybara/rails'
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-# Checks for pending migration and applies them before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
+# load schema
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
 
 load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
 # ActiveRecord::Migrator.up('db/migrate') # use migrations
+
+puts "needs_migration: #{ActiveRecord::Migrator.needs_migration?}"
+puts "any_migrations: #{ActiveRecord::Migrator.any_migrations?}"
+
+# Checks for pending migration and applies them before tests are run.
+# If you are not using ActiveRecord, you can remove this line.
 
 ActiveRecord::Migration.maintain_test_schema!
 
