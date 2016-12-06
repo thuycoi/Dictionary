@@ -1,4 +1,4 @@
-ENV['RAILS_ENV'] ||= 'search'
+ENV['RAILS_ENV'] ||= 'test'
 require 'rails_helper.rb'
 
 feature "Searching in Gwords" do

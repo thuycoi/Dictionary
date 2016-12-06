@@ -5,7 +5,7 @@ rvm:
 env:
 - db = sqlite
 script:
-- bin/rails db:migrate RAILS_ENV=search
+- bin/rails db:migrate RAILS_ENV=test
 - bundle exec rspec spec/
 branches:
     only:
