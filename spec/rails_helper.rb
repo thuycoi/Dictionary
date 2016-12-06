@@ -46,6 +46,13 @@ puts "migrations - versions #{migrations - versions}"
 #  (migrations(migrations_paths).collect(&:version) - get_all_versions(connection)).size > 0
 #end
 
+# there is one empty migration
+
+# class DropComments < ActiveRecord::Migration[5.0]
+#   def change
+#   end
+# end
+# git rm db/migrate/20161031115214_drop_comments.rb
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
