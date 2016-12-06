@@ -26,8 +26,8 @@ require 'capybara/rails'
 # load schema
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
-# ActiveRecord::Migrator.up('db/migrate') # use migrations
+#load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
+ ActiveRecord::Migrator.up('db/migrate') # use migrations
 
 puts "needs_migration: #{ActiveRecord::Migrator.needs_migration?}"
 puts "any_migrations: #{ActiveRecord::Migrator.any_migrations?}"
