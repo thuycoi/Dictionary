@@ -26,16 +26,29 @@ require 'capybara/rails'
 # load schema
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
-
 load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
 # ActiveRecord::Migrator.up('db/migrate') # use migrations
 
 puts "needs_migration: #{ActiveRecord::Migrator.needs_migration?}"
 puts "any_migrations: #{ActiveRecord::Migrator.any_migrations?}"
+puts "Base.connection_config #{ActiveRecord::Base.connection_config}"
+versions = ActiveRecord::Migrator.get_all_versions
+puts "get_all_versions #{versions}"
+#(migrations(migrations_paths).collect(&:version)
+migrations = ActiveRecord::Migrator.migrations(ActiveRecord::Migrator.migrations_paths).collect(&:version)
+puts "migrations: #{migrations}"
+puts "migrations - versions #{migrations - versions}"
+
+# see
+# atom `bundle show activerecord`/lib/active_record/migration.rb:572
+
+#def needs_migration?(connection = Base.connection)
+#  (migrations(migrations_paths).collect(&:version) - get_all_versions(connection)).size > 0
+#end
+
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
-
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
