@@ -1,3 +1,4 @@
+ENV['RAILS_ENV'] ||= 'test'
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
